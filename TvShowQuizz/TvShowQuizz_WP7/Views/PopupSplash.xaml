@@ -1,0 +1,52 @@
+﻿<UserControl x:Name="userControl" x:Class="TvShowQuizz.PopupSplash"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:mq="clr-namespace:TvShowQuizz"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="768" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Background="Black" DataContext="{Binding Source={StaticResource Locator}, Path=PopupSplashViewModel}">
+
+        <Grid Name="backgroundGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"></RowDefinition>                
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="232"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Grid.RowSpan="3" Canvas.ZIndex="0" Name="image1" mq:ImageExtension.MultiResolutionUri="/Resources/Images/backgroundImage.png" Stretch="UniformToFill" />
+            <Image Grid.Row="0" Grid.RowSpan="2" Source="/Resources/Images/tvsq_logo_1024.png" Margin="100,100,100,0" ></Image>
+            <!--<Image Grid.Row="2" Canvas.ZIndex="3"  Source="/Resources/Images/objects@2x.png" Stretch="UniformToFill" />-->
+        </Grid>
+        
+        
+        <!--<Grid Name="backgroundGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"></RowDefinition>                
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>                
+            </Grid.RowDefinitions>
+            <Image Grid.RowSpan="4" Canvas.ZIndex="0" Name="image1" mq:ImageExtension.MultiResolutionUri="/SplashScreenImage.png" Stretch="UniformToFill" />
+            <Image Grid.Row="1" Source="/Resources/Images/btn_icon@2x.png" Margin="80" ></Image>
+
+            <Image Grid.Row="2" Source="/Resources/Images/objects@2x.png" Stretch="UniformToFill" />
+            
+        </Grid>-->
+        
+        <Grid Name="objectsGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="2">
+                <ProgressBar Canvas.ZIndex="3" Grid.Row="1" HorizontalAlignment="Stretch"  Name="progressBar1"  IsIndeterminate="True" Margin="5" />
+                <TextBlock Canvas.ZIndex="3" Grid.Row="1" HorizontalAlignment="Center"  Name="textBlock1" Text="{Binding ProgressIndication}" Foreground="White" FontFamily="{StaticResource CustomFont-Roboto-Black}" FontSize="25"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl> 

@@ -1,0 +1,53 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone" 
+             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" 
+             xmlns:navigation="clr-namespace:System.Windows.Navigation;assembly=Microsoft.Phone" 
+             xmlns:Locators="clr-namespace:MovieQuizz2.Locators" 
+             xmlns:Converters="clr-namespace:QuizzApp.Core.Helpers.Converters;assembly=QuizzApp" 
+             xmlns:Helpers="clr-namespace:QuizzApp.Core.Helpers;assembly=QuizzApp" 
+             xmlns:clr="clr-namespace:System;assembly=mscorlib" 
+             xmlns:local="clr-namespace:MovieQuizz2.Resources" 
+             xmlns:Controls="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls" 
+             x:Class="MovieQuizz2.App">
+  <!--Ressources d'applications-->
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Assets/MQStyles.xaml" />
+        <!--<ResourceDictionary Source="CustomTheme/ThemeResources.xaml"/>-->
+      </ResourceDictionary.MergedDictionaries>
+      <local:LocalizedStrings x:Key="LocalizedStrings" />
+      <Helpers:AppSettingsProvider x:Key="AppSettingsProvider" />
+      <!--View Model Locator-->
+      <Locators:WindowsPhoneViewModelLocator x:Key="Locator" />
+      <Locators:WindowsPhoneControlsViewModelLocator x:Key="ControlsLocator" />
+      <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+      <Converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+      <Converters:BinaryArrayToImageConverter x:Key="BinaryArrayToImageConverter" />
+      <Converters:BoolToBrushConverter x:Key="BoolToBrushConverter" />
+      <Converters:UpperCaseConverter x:Key="UpperCaseConverter" />
+      <Converters:TimespanConverter x:Key="TimespanConverter" />
+      <Converters:ByteToStringConverter x:Key="ByteToStringConverter" />
+      <Converters:ColorToSolidColorBrushConverter x:Key="ColorToSolidColorBrushConverter" />
+      <Converters:BoolToOpacityConverter x:Key="BoolToOpacityConverter" />
+      <Converters:BoolToSelectedOnListColorConverter x:Key="BoolToSelectedOnListColorConverter" />
+            <Converters:ColorDarkerConverter x:Key="ColorDarkerConverter" />
+            <Converters:PlusOneConverter x:Key="PlusOneConverter" />
+            
+
+            <!-- STEP: Create UriMapper -->
+      <navigation:UriMapper x:Key="UriMapper">
+          <!-- /Facebook.Client;component/loginpage.xaml-->
+          <navigation:UriMapping Uri="/{assemblyName};component/{path}" MappedUri="/{assemblyName};component/{path}" />
+          <navigation:UriMapping Uri="" MappedUri="/Views/MainPage.xaml" />
+          <navigation:UriMapping Uri="/MainPage.xaml" MappedUri="/Views/MainPage.xaml" />
+          <navigation:UriMapping Uri="/{pageName}" MappedUri="/Views/{pageName}.xaml" />       
+      </navigation:UriMapper>
+    </ResourceDictionary>
+  </Application.Resources>
+  <Application.ApplicationLifetimeObjects>
+    <!--Objet requis qui gère les événements de durée de vie pour l'application-->
+    <shell:PhoneApplicationService Launching="Application_Launching" Closing="Application_Closing" Activated="Application_Activated" Deactivated="Application_Deactivated" />    
+  </Application.ApplicationLifetimeObjects>
+</Application>

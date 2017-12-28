@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="MovieQuizz2.ChooseLanguagePopupContentControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c4f="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+    Foreground="Black"
+    Background="White"
+    mc:Ignorable="d" d:DesignWidth="522" d:DesignHeight="194"    
+    >
+    <Grid VerticalAlignment="Top" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{Binding AppResources.ChooseLanguagePopupText, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" />
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button VerticalAlignment="Center" Content="Français" Click="Button_French_Click" Background="White" BorderBrush="Black" Foreground="Black"></Button>
+            <Button VerticalAlignment="Center" Content="English" Click="Button_English_Click" Background="White" BorderBrush="Black" Foreground="Black"></Button>
+        </StackPanel>
+    </Grid>
+
+
+
+</UserControl>

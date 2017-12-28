@@ -1,0 +1,148 @@
+﻿<phone:PhoneApplicationPage x:Name="phoneApplicationPage" 
+    x:Class="MovieQuizz2.LevelsPage2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Locators="clr-namespace:MovieQuizz2.Locators"
+    xmlns:mq="clr-namespace:MovieQuizz2"
+    xmlns:qac="clr-namespace:QuizzApp.WP.Controls;assembly=QuizzApp.WP.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"    
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False"    
+    DataContext="{Binding Source={StaticResource Locator}, Path=LevelsList2ViewModel}"
+    >
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="False" IsVisible="True" BackgroundColor="{StaticResource PhoneBackgroundColor}">
+            <shell:ApplicationBarIconButton Click="ApplicationBarRefreshButton_Click" IconUri="/Assets/AppBar/appbar.sync.rest.png" Text="actualiser" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <!--LayoutRoot est la grille racine où tout le contenu de la page est placé-->
+    <Grid>
+        <Grid></Grid>
+        <Grid x:Name="LayoutRoot" >
+
+
+            <Grid Name="backgroundGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Grid.RowSpan="5" Canvas.ZIndex="0" Name="image1" mq:ImageExtension.MultiResolutionUri="/Resources/Images/backgroundImage.png" Stretch="UniformToFill" />
+
+                <Grid Grid.Row="0" Background="{StaticResource MQLightOrangeColorBrush}" Height="65">
+                    <TextBlock Text="{Binding AppResources.LevelsPageTitle, Converter={StaticResource UpperCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource MQHeaderTitleFontFamily}" FontSize="{StaticResource MQHeaderTitleFontHeight}" Foreground="{StaticResource MQHeaderTitleFontColor}" ></TextBlock>
+                </Grid>
+                <Grid Grid.Row="1" Background="{StaticResource MQDarkOrangeColorBrush}" Height="5" />
+            </Grid>
+
+
+            <Grid Name="main_grid" Margin="0,65,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
+                    <ItemsControl ItemsSource="{Binding AllPacks}" HorizontalContentAlignment="Stretch"
+                                  >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid MaxHeight="140" Margin="7" >
+                                    <mq:MQPackagePresenterControl Package="{Binding}" Foreground="{StaticResource MQWhiteForegroundBrush}" PosterVisibility="Collapsed" ></mq:MQPackagePresenterControl>
+                                    
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+
+                <!--<ListBox Grid.Row="1" Name="difficultiesList" ItemsSource="{Binding Difficulties}">
+
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                            <Setter Property="Margin" Value="0,0,0,0"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <StackPanel Orientation="Horizontal" Margin="5,3,5,3">
+                                    <TextBlock Text="{Binding Name}" FontFamily="{StaticResource CustomFont-RobotoCondensed-Regular}" FontSize="25" Foreground="{StaticResource DefaultForegroundBrush}"></TextBlock>
+                                    <TextBlock Text=" (" FontFamily="{StaticResource CustomFont-RobotoCondensed-Regular}" FontSize="25" Foreground="{StaticResource DefaultForegroundBrush}"></TextBlock>
+                                    <TextBlock Text="{Binding TotalTerminated}" FontFamily="{StaticResource CustomFont-RobotoCondensed-Regular}" FontSize="25" Foreground="{StaticResource DefaultForegroundBrush}"></TextBlock>
+                                    <TextBlock Text="/" FontFamily="{StaticResource CustomFont-RobotoCondensed-Regular}" FontSize="25" Foreground="{StaticResource DefaultForegroundBrush}"></TextBlock>
+                                    <TextBlock Text="{Binding Levels.Count}" FontFamily="{StaticResource CustomFont-RobotoCondensed-Regular}" FontSize="25" Foreground="{StaticResource DefaultForegroundBrush}"></TextBlock>
+                                    <TextBlock Text=")" FontFamily="{StaticResource CustomFont-RobotoCondensed-Regular}" FontSize="25" Foreground="{StaticResource DefaultForegroundBrush}"></TextBlock>
+                                </StackPanel>
+
+                                
+
+
+                                <ItemsControl ItemsSource="{Binding Levels}" >
+                                     <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel></StackPanel>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition />
+                                                    
+                                                </Grid.RowDefinitions>
+
+                                                <toolkit:ExpanderView Header="{Binding Number}" x:Name="expander">
+                                                    <toolkit:ExpanderView.Items>
+                                                        <TextBlock FontSize="40" Text="Expanded Content 1" Foreground="Orange"/>
+                                                        <TextBlock FontSize="40" Text="Expanded Content 2" Foreground="YellowGreen"/>
+                                                    </toolkit:ExpanderView.Items>
+                                                    <toolkit:ExpanderView.Expander>
+                                                        <Rectangle Height="100" Width="400" Fill="Green"/>
+                                                    </toolkit:ExpanderView.Expander>
+                                                </toolkit:ExpanderView>
+                                                
+                                                <Grid Grid.Row="1" Name="Toto" Background="Red" Visibility="Collapsed"
+                                                      
+                                                      >
+                                                    <TextBlock Text="My Text" Width="480"></TextBlock>
+                                                </Grid>
+
+                                                
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                                    
+                                </toolkit:WrapPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>-->
+            </Grid>
+
+        </Grid>
+    </Grid>
+
+
+</phone:PhoneApplicationPage>

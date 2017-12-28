@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="fr-FR" />
+  <Languages xmlns="">
+    <Language code="en" />
+    <Language code="fr" />
+  </Languages>
+  <App xmlns="" ProductID="{1693af09-cb4b-47cb-b163-8033672b4c8a}" Title="Movie Quizz" RuntimeType="Silverlight" Version="2.0.6.0" Genre="apps.normal" Author="Benoit Pitet" Description="Testez vos connaissances cinématographiques !" Publisher="MovieQuizz" PublisherID="{6388ee42-ec25-4613-9683-8ec323889bd7}">
+    <IconPath IsRelative="true" IsResource="false">logo-wp-1024.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_REMOVABLE_STORAGE" />
+      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+      <Capability Name="ID_CAP_IDENTITY_USER" />
+      <Capability Name="ID_CAP_PUSH_NOTIFICATION" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="MovieQuizz_WP8Token" TaskName="_default">
+        <TemplateFlip>
+          <SmallImageURI IsRelative="true" IsResource="false">logo-wp-1024.png</SmallImageURI>
+          <Count>0</Count>
+          <BackgroundImageURI IsRelative="true" IsResource="false">logo-wp-1024.png</BackgroundImageURI>
+          <Title>
+          </Title>
+          <BackContent>
+          </BackContent>
+          <BackBackgroundImageURI IsRelative="true" IsResource="false">
+          </BackBackgroundImageURI>
+          <BackTitle>
+          </BackTitle>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
+          </DeviceLockImageURI>
+          <HasLarge>false</HasLarge>
+        </TemplateFlip>
+      </PrimaryToken>
+    </Tokens>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
+      <ScreenResolution Name="ID_RESOLUTION_WXGA" />
+      <ScreenResolution Name="ID_RESOLUTION_HD720P" />
+    </ScreenResolutions>
+  </App>
+</Deployment>

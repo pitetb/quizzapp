@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{66F4198D-CF2F-4D43-A718-BDB0B6910058}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TvShowQuizz</RootNamespace>
+    <AssemblyName>TvShowQuizz</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>en</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>TvShowQuizz.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>TvShowQuizz.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WINDOWS_PHONE7</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;WINDOWS_PHONE7</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Coding4Fun.Toolkit, Version=2.0.7.0, Culture=neutral, PublicKeyToken=c5fd7b72b1a17ce4, processorArchitecture=MSIL" />
+    <Reference Include="Coding4Fun.Toolkit.Controls, Version=2.0.7.0, Culture=neutral, PublicKeyToken=c5fd7b72b1a17ce4, processorArchitecture=MSIL" />
+    <Reference Include="GoogleAnalytics, Version=1.2.11.29600, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\GoogleAnalyticsSDK.1.2.12\lib\wp71\GoogleAnalytics.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleAnalytics.Core, Version=1.2.11.29599, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\GoogleAnalyticsSDK.1.2.12\lib\wp71\GoogleAnalytics.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="LayoutTransformer">
+      <HintPath>..\packages\LayoutTransformer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Controls, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Drawing, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Interactions, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\..\packages\WPtoolkit.4.2013.08.16\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.5.0.8\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleMvvmToolkit-WP7, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleMvvmToolkit.5.5.0.0\lib\sl4-windowsphone71\SimpleMvvmToolkit-WP7.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\sl4-windowsphone71\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=1.5.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\sl4-windowsphone71\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks, Version=1.5.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\sl4-windowsphone71\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleMvvmToolkit.5.5.0.0\lib\sl4-windowsphone71\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+    <Reference Include="WriteableBitmapExWinPhone, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WriteableBitmapEx.1.0.14.0\lib\sl4-wp71\WriteableBitmapExWinPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="WriteableBitmapExWinPhoneXnaDependant">
+      <HintPath>..\..\packages\WriteableBitmapEx.1.0.14.0\lib\sl4-wp71\WriteableBitmapExWinPhoneXnaDependant.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MQGamePovider.cs" />
+    <Compile Include="Helpers\MessagePromptHelper.cs" />
+    <Compile Include="Locators\Controls\WindowsPhoneControlsViewModelLocator.cs" />
+    <Compile Include="Locators\WindowsPhoneViewModelLocator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AppResources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LocalizedStrings.cs" />
+    <Compile Include="Views\Controls\AboutPopupContentControl.xaml.cs">
+      <DependentUpon>AboutPopupContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\AdBannerControl.xaml.cs">
+      <DependentUpon>AdBannerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ChooseLanguagePopupContentControl.xaml.cs">
+      <DependentUpon>ChooseLanguagePopupContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ConfirmPopupContentControl.xaml.cs">
+      <DependentUpon>ConfirmPopupContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\DownloadPopupContentControl.xaml.cs">
+      <DependentUpon>DownloadPopupContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\EndPackPopupContentControl.xaml.cs">
+      <DependentUpon>EndPackPopupContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ImageExtension.cs" />
+    <Compile Include="Views\Controls\LoadPopupContentControl.xaml.cs">
+      <DependentUpon>LoadPopupContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\LockedPackPopupContentControl.xaml.cs">
+      <DependentUpon>LockedPackPopupContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\MQKeyboard\KeyboardControl.xaml.cs">
+      <DependentUpon>KeyboardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\MQKeyboard\KeyboardLetterControl.xaml.cs">
+      <DependentUpon>KeyboardLetterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\MQLevelButton.xaml.cs">
+      <DependentUpon>MQLevelButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\MQPackagePresenterControl.xaml.cs">
+      <DependentUpon>MQPackagePresenterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\SmallPackagePresenterControl.xaml.cs">
+      <DependentUpon>SmallPackagePresenterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ThreePosterControl.xaml.cs">
+      <DependentUpon>ThreePosterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HelpPage.xaml.cs">
+      <DependentUpon>HelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LevelsPage.xaml.cs">
+      <DependentUpon>LevelsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LevelsPage2.xaml.cs">
+      <DependentUpon>LevelsPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PacksListPage.xaml.cs">
+      <DependentUpon>PacksListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopupSplash.xaml.cs">
+      <DependentUpon>PopupSplash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Assets\MQStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\AboutPopupContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\AdBannerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\ChooseLanguagePopupContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\ConfirmPopupContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\DownloadPopupContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\EndPackPopupContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\LoadPopupContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\LockedPackPopupContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\MQKeyboard\KeyboardControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\MQKeyboard\KeyboardLetterControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\MQLevelButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\MQPackagePresenterControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\SmallPackagePresenterControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\ThreePosterControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GamePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\HelpPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LevelsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LevelsPage2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PacksListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Page1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PopupSplash.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="analytics.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+    <None Include="Resources\Font\Roboto-Black.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Font\Roboto-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Font\RobotoCondensed-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Font\RobotoCondensed-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Levels\level_67.zip" />
+    <None Include="Resources\Levels\level_68.zip" />
+    <None Include="TvShowQuizz_WP7_2014_10_06_22_52_19.sap" />
+    <None Include="TvShowQuizz_WP7_2014_10_07_23_33_00.sap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="analytics.xml" />
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\appbar.back.rest.png" />
+    <Content Include="Assets\AppBar\appbar.download.rest.png" />
+    <Content Include="Assets\AppBar\appbar.feature.email.rest.png" />
+    <Content Include="Assets\AppBar\appbar.folder.rest.png" />
+    <Content Include="Assets\AppBar\appbar.refresh.rest.png" />
+    <Content Include="Assets\AppBar\appbar.share.rest.png" />
+    <Content Include="Assets\AppBar\appbar.sync.rest.png" />
+    <Content Include="Assets\AppBar\appbar.transport.rew.rest.png" />
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lib\Coding4Fun.Toolkit.Controls.dll" />
+    <Content Include="Lib\Coding4Fun.Toolkit.dll" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Resources\en\Images\banner%402x.png" />
+    <Content Include="Resources\fr\Images\banner%402x.png" />
+    <Content Include="Resources\Images\backgroundImage.Screen-720.png" />
+    <Content Include="Resources\Images\backgroundImage.Screen-WVGA.png" />
+    <Content Include="Resources\Images\backgroundImage.Screen-WXGA.png" />
+    <Content Include="Resources\Images\btn_delete_off%402x.png" />
+    <Content Include="Resources\Images\btn_delete_on%402x.png" />
+    <Content Include="Resources\Images\btn_help_off%402x.png" />
+    <Content Include="Resources\Images\btn_help_on%402x.png" />
+    <Content Include="Resources\Images\btn_icon_off%402x.png" />
+    <Content Include="Resources\Images\btn_icon_on%402x.png" />
+    <Content Include="Resources\Images\footer%402x.png" />
+    <Content Include="Resources\Images\header%402x.png" />
+    <Content Include="Resources\Images\help1-movie-quizz-windows_phone.png" />
+    <Content Include="Resources\Images\help2-movie-quizz-windows_phone.png" />
+    <Content Include="Resources\Images\help3-movie-quizz-windows_phone.png" />
+    <Content Include="Resources\Images\ic_email2%402x.png" />
+    <Content Include="Resources\Images\ic_exclamation%402x.png" />
+    <Content Include="Resources\Images\ic_flag%402x.png" />
+    <Content Include="Resources\Images\ic_how_to%402x.png" />
+    <Content Include="Resources\Images\ic_mute%402x.png" />
+    <Content Include="Resources\Images\ic_sound%402x.png" />
+    <Content Include="Resources\Images\ic_suggest_pack%402x.png" />
+    <Content Include="Resources\Images\ic_website%402x.png" />
+    <Content Include="Resources\Images\logo-wp-1024.png" />
+    <Content Include="Resources\Images\tvsq_logo_1024.png" />
+    <Content Include="Resources\Sounds\success.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\wrong.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SimpleMvvmReadme.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\QuizzApp\QuizzApp.Tombstone\QuizzApp.Tombstone.csproj">
+      <Project>{9F5EC104-C91F-440E-84A0-82579A37B679}</Project>
+      <Name>QuizzApp.Tombstone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\QuizzApp\QuizzApp.WP.Controls\QuizzApp.WP.Controls.csproj">
+      <Project>{1FD7C649-B963-446D-ACE8-60B3D8D21C7A}</Project>
+      <Name>QuizzApp.WP.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\QuizzApp\QuizzApp.WP.ViewModels\QuizzApp.WP.ViewModels.csproj">
+      <Project>{E6F311CC-9558-40CD-B6BE-67E249916F9E}</Project>
+      <Name>QuizzApp.WP.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\QuizzApp\QuizzApp\QuizzApp.csproj">
+      <Project>{DC6304D8-F3F5-4518-B767-2A89EA906FF9}</Project>
+      <Name>QuizzApp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.en.resx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.en.xlf</DependentUpon>
+      <culture>en</culture>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <XliffResource Include="Resources\AppResources.en.xlf">
+      <Generator>XliffResxGenerator</Generator>
+      <LastGenOutput>AppResources.en.resx</LastGenOutput>
+    </XliffResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <Import Label="MultilingualAppToolkitForWindowsPhone" Project="$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualPhoneBuild.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualPhoneBuild.targets')" />
+  <Target Name="BeforeBuild">
+    <MultilingualPhoneBuild Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualPhoneBuild.targets')" ContinueOnError="false" ResxFiles="@(EmbeddedResource)" XliffFiles="@(XliffResource)" BldOutputPath="$(IntermediateOutputPath)" BinOutputPath="bin\$(Configuration)" AppName="$(ProjectName)" />
+  </Target>
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Activez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est le suivant : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+</Project>

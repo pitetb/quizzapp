@@ -1,0 +1,181 @@
+﻿<phone:PhoneApplicationPage xmlns:MQKeyboard="clr-namespace:MovieQuizz2.Views.Controls.MQKeyboard"  
+    xmlns:MQ2Controls="clr-namespace:MovieQuizz2.Views.Controls"  
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" x:Name="phoneApplicationPage"  
+    x:Class="MovieQuizz2.HelpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Locators="clr-namespace:MovieQuizz2.Locators"
+    xmlns:controlsPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls" 
+    xmlns:mq="clr-namespace:MovieQuizz2"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:qac="clr-namespace:QuizzApp.WP.Controls;assembly=QuizzApp.WP.Controls"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"    
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False"    
+    DataContext="{Binding Source={StaticResource Locator}, Path=HelpViewModel}"
+    >
+    <phone:PhoneApplicationPage.Resources>
+       
+
+        <Style x:Key="PivotStyleNoMarging" TargetType="controls:Pivot">
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <Grid/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <!--<Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="controls:Pivot">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>-->
+                            <!--<ContentPresenter ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" Margin="0"/>-->
+                            <!--<Grid Background="{TemplateBinding Background}" CacheMode="BitmapCache" Grid.RowSpan="3"/>-->
+                            <!--<ContentPresenter ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" Margin="0"/>-->
+                            <!--<controlsPrimitives:PivotHeadersControl x:Name="HeadersListElement" Grid.Row="1"/>-->
+                            <!--<ItemsPresenter x:Name="PivotItemPresenter" Margin="0" Grid.Row="2"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>-->
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="False" IsVisible="True" BackgroundColor="{StaticResource PhoneBackgroundColor}">
+            <shell:ApplicationBarIconButton Click="ApplicationBarCloseButton_Click" IconUri="/Toolkit.Content/ApplicationBar.Cancel.png" Text="close" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <!--LayoutRoot est la grille racine où tout le contenu de la page est placé-->
+    <Grid>
+
+        <Grid x:Name="LayoutRoot" >
+
+            
+            <Grid Name="backgroundGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Grid.RowSpan="5" Canvas.ZIndex="0" Name="image1" mq:ImageExtension.MultiResolutionUri="/Resources/Images/backgroundImage.png" Stretch="UniformToFill" />
+
+                <Grid Grid.Row="0" Background="{StaticResource MQLightOrangeColorBrush}" Height="65">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition  Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <TextBlock Text="{Binding AppResources.HelpPageTitle, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource MQHeaderTitleFontFamily}" FontSize="{StaticResource MQHeaderTitleFontHeight}" Foreground="{StaticResource MQHeaderTitleFontColor}" ></TextBlock>
+                        <TextBlock Text=" (" FontFamily="{StaticResource MQHeaderTitleFontFamily}" FontSize="{StaticResource MQHeaderTitleFontHeight}" Foreground="{StaticResource MQHeaderTitleFontColor}"></TextBlock>
+                        <TextBlock Text="{Binding SelectedPageIndex, Converter={StaticResource PlusOneConverter}}" FontFamily="{StaticResource MQHeaderTitleFontFamily}" FontSize="{StaticResource MQHeaderTitleFontHeight}" Foreground="{StaticResource MQHeaderTitleFontColor}"></TextBlock>
+                        <TextBlock Text="/" FontFamily="{StaticResource MQHeaderTitleFontFamily}" FontSize="{StaticResource MQHeaderTitleFontHeight}" Foreground="{StaticResource MQHeaderTitleFontColor}"></TextBlock>
+                        <TextBlock Text="{Binding Items.Count, ElementName=PivotControl, Mode=OneWay}" FontFamily="{StaticResource MQHeaderTitleFontFamily}" FontSize="{StaticResource MQHeaderTitleFontHeight}" Foreground="{StaticResource MQHeaderTitleFontColor}" ></TextBlock>
+                        <TextBlock Text=")" FontFamily="{StaticResource MQHeaderTitleFontFamily}" FontSize="{StaticResource MQHeaderTitleFontHeight}" Foreground="{StaticResource MQHeaderTitleFontColor}"></TextBlock>                        
+                    </StackPanel>                   
+                </Grid>
+                <Grid Grid.Row="1" Background="{StaticResource MQDarkOrangeColorBrush}" Height="5" />
+            </Grid>
+
+
+            <Grid Name="main_grid" Margin="0,65,0,0" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+                <controls:Pivot Name="PivotControl" Grid.Row="1" Style="{StaticResource PivotStyleNoMarging}" CacheMode="BitmapCache" SelectedIndex="{Binding SelectedPageIndex, Mode=TwoWay}"
+				 
+                            >
+                    
+                    <controls:Pivot.Items>
+                        <controls:PivotItem>
+                            <Grid Margin="-12,-28,-12,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition ></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                            Margin="2,10,2,2"
+                                           Text="{Binding AppResources.HelpTextPage1, Converter={StaticResource UpperCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource CustomFont-RobotoCondensed-Regular}" Foreground="{StaticResource MQProgressOrangeBrush}" FontSize="30" TextAlignment="Center" FontWeight="Bold" />
+                                <Image x:Name="help1" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Bottom"  Tap="imageMovie_Tap" Canvas.ZIndex="0" Source="/Resources/Images/help1-movie-quizz-windows_phone.png"  />
+                            </Grid>
+                        </controls:PivotItem>
+
+                        <controls:PivotItem>
+                            <Grid Margin="-12,-28,-12,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition ></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                            Margin="2,10,2,2"
+                                           Text="{Binding AppResources.HelpTextPage2, Converter={StaticResource UpperCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource CustomFont-RobotoCondensed-Regular}" Foreground="{StaticResource MQProgressOrangeBrush}" FontSize="30" TextAlignment="Center" FontWeight="Bold" />
+                                <Image x:Name="help2" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Bottom"  Tap="imageMovie_Tap" Canvas.ZIndex="0" Source="/Resources/Images/help2-movie-quizz-windows_phone.png"  />
+                            </Grid>
+                        </controls:PivotItem>
+
+                        <controls:PivotItem>
+                            <Grid Margin="-12,-28,-12,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition ></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                            Margin="2,10,2,2"
+                                           Text="{Binding AppResources.HelpTextPage3, Converter={StaticResource UpperCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource CustomFont-RobotoCondensed-Regular}" Foreground="{StaticResource MQProgressOrangeBrush}" FontSize="30" TextAlignment="Center" FontWeight="Bold" />
+                                <Image x:Name="help3" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Bottom"  Tap="imageMovie_Tap" Canvas.ZIndex="0" Source="/Resources/Images/help3-movie-quizz-windows_phone.png"  />
+                            </Grid>
+                        </controls:PivotItem>
+
+                    </controls:Pivot.Items>
+
+                    <!--<controls:Pivot.ItemTemplate>
+
+                        <DataTemplate x:Name="itemDataTemplate">
+
+                            <Grid Margin="-12,-28,-12,0" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition ></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                
+                                <Image x:Name="imageMovie" Grid.Row="0" Grid.RowSpan="2" Source="{Binding Mode=OneWay}" Tap="imageMovie_Tap" Canvas.ZIndex="0" />
+
+                            </Grid>
+                        </DataTemplate>
+
+                    </controls:Pivot.ItemTemplate>-->
+
+
+                </controls:Pivot>
+
+
+            </Grid>
+        </Grid>
+
+    </Grid>
+
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="fr" target-language="en" original="AppResources.resx" tool-id="MultilingualAppToolkit" product-name="MovieQuizz2_WP7" product-version="2.0.5" build-num="5">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="1.2.2017.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resx">
+        <trans-unit id="Resx/ApplicationTitle" translate="yes" xml:space="preserve">
+          <source>Movie Quizz</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Movie quiz</target>
+        </trans-unit>
+        <trans-unit id="Resx/StartupInitializingMoviesStep1" translate="yes" xml:space="preserve">
+          <source>Initialisation...</source>
+          <target state="new">Initialisation...</target>
+        </trans-unit>
+        <trans-unit id="Resx/LoadingIndicator" translate="yes" xml:space="preserve">
+          <source>Chargement en cours...</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Loading in progress...</target>
+        </trans-unit>
+        <trans-unit id="Resx/DlPackFailed" translate="yes" xml:space="preserve">
+          <source>Impossible de télécharger un pack. Veuillez vérifier votre connexion de données et réessayer.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Unable to download a pack. Please check your data connection and try again.</target>
+        </trans-unit>
+        <trans-unit id="Resx/DlPackListFailed" translate="yes" xml:space="preserve">
+          <source>Impossible de télécharger la liste des packs. Veuillez vérifier votre connexion de données et réessayer.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Unable to download the list of packs. Please check your data connection and try again.</target>
+        </trans-unit>
+        <trans-unit id="Resx/InitNoNetworkMessage" translate="yes" xml:space="preserve">
+          <source>Attention ! Impossible de joindre le serveur. Certaines fonctionalités pourraient ne pas fonctionner ! Veuillez verifier votre connexion de données.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Warning! Unable to reach the server. Some features may not work! Please check your data connection.</target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPageRateButton" translate="yes" xml:space="preserve">
+          <source>évaluer</source>
+          <target state="new">rate</target>
+        </trans-unit>
+        <trans-unit id="Resx/StartupInitializingMoviesStep2" translate="yes" xml:space="preserve">
+          <source>Préparation des films...</source>
+          <target state="new">Preparing movies...</target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPageScoresButton" translate="yes" xml:space="preserve">
+          <source>scores</source>
+          <target state="new">scores</target>
+        </trans-unit>
+        <trans-unit id="Resx/AppBarBackText" translate="yes" xml:space="preserve">
+          <source>retour</source>
+          <target state="new">back</target>
+        </trans-unit>
+        <trans-unit id="Resx/AppBarRefreshText" translate="yes" xml:space="preserve">
+          <source>actualiser</source>
+          <target state="new">refresh</target>
+        </trans-unit>
+        <trans-unit id="Resx/LevelsPageTitle" translate="yes" xml:space="preserve">
+          <source>Niveaux</source>
+          <target state="new">Levels</target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPageClickToStartPlaying" translate="yes" xml:space="preserve">
+          <source>Cliquez pour commencer à jouer</source>
+          <target state="new">Click to start playing</target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPageOptionsButton" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target state="new">Settings</target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPageTitle" translate="yes" xml:space="preserve">
+          <source>Accueil</source>
+          <target state="new">Home</target>
+        </trans-unit>
+        <trans-unit id="Resx/PopupLevelsDownloadMessage" translate="yes" xml:space="preserve">
+          <source>Téléchargement</source>
+          <target state="new">Downloading</target>
+        </trans-unit>
+        <trans-unit id="Resx/PopupLevelsDownloadTerminatedError" translate="yes" xml:space="preserve">
+          <source>Une erreur est survenue, vérifiez votre connection et réessayez !</source>
+          <target state="new">An error occurs, check your internet connexion and try again !</target>
+        </trans-unit>
+        <trans-unit id="Resx/PopupLevelsDownloadTerminatedOk" translate="yes" xml:space="preserve">
+          <source>Terminé !</source>
+          <target state="new">Finished !</target>
+        </trans-unit>
+        <trans-unit id="Resx/PacksListPageTitle" translate="yes" xml:space="preserve">
+          <source>Niveau</source>
+          <target state="new">Levels</target>
+        </trans-unit>
+        <trans-unit id="Resx/ChooseLanguagePopupText" translate="yes" xml:space="preserve">
+          <source>Choisissez une langue</source>
+          <target state="new">Select a language</target>
+        </trans-unit>
+        <trans-unit id="Resx/RestartApplicationMessageText" translate="yes" xml:space="preserve">
+          <source>Langue modifiée. L'application va quitter, veuillez redémarrer pour voir les changements.</source>
+          <target state="new">Language changed. Application will stop, please restart to see changes.</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsMenuActivateSound" translate="yes" xml:space="preserve">
+          <source>Activer les sons</source>
+          <target state="new">Enable sounds</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsMenuChangeLanguage" translate="yes" xml:space="preserve">
+          <source>Changer de langue</source>
+          <target state="new">Change language</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsMenuDesactivateSound" translate="yes" xml:space="preserve">
+          <source>Désactiver les sons</source>
+          <target state="new">Disable sounds</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsMenuHowToPlay" translate="yes" xml:space="preserve">
+          <source>Comment jouer</source>
+          <target state="new">How to play</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsMenuProposePack" translate="yes" xml:space="preserve">
+          <source>Proposer un pack</source>
+          <target state="new">Suggest a pack</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsMenuQuizzApp" translate="yes" xml:space="preserve">
+          <source>Quizz App</source>
+          <target state="new">Quizz App</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsPageTitle" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target state="new">Settings</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePageHelpPopupText" translate="yes" xml:space="preserve">
+          <source>Prochaine aide dans #time secondes...</source>
+          <target state="new">Next help in #time seconds...</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePageHelpPopupTitle" translate="yes" xml:space="preserve">
+          <source>Patience !</source>
+          <target state="new">Please wait !</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePageTitleFound" translate="yes" xml:space="preserve">
+          <source>Trouvé</source>
+          <target state="new">Finished</target>
+        </trans-unit>
+        <trans-unit id="Resx/PackagePresenterControlPackTerminated" translate="yes" xml:space="preserve">
+          <source>Terminé</source>
+          <target state="new">Finished</target>
+        </trans-unit>
+        <trans-unit id="Resx/PopupEndPackButtonOk" translate="yes" xml:space="preserve">
+          <source>Ok</source>
+          <target state="new">Ok</target>
+        </trans-unit>
+        <trans-unit id="Resx/PopupEndPackButtonPacks" translate="yes" xml:space="preserve">
+          <source>Packs</source>
+          <target state="new">Packs</target>
+        </trans-unit>
+        <trans-unit id="Resx/PopupEndPackMessage" translate="yes" xml:space="preserve">
+          <source>Vous avez gagné #nbpoints points. </source>
+          <target state="new">You have #nbpoints points. </target>
+        </trans-unit>
+        <trans-unit id="Resx/PopupEndPackTitle" translate="yes" xml:space="preserve">
+          <source>Pack terminé</source>
+          <target state="new">Pack finished</target>
+        </trans-unit>
+        <trans-unit id="Resx/PopupLevelsDownloadInstallationProgress" translate="yes" xml:space="preserve">
+          <source>Installation en cours...</source>
+          <target state="new">Installing pack...</target>
+        </trans-unit>
+        <trans-unit id="Resx/AppBarCloseButton" translate="yes" xml:space="preserve">
+          <source>fermer</source>
+          <target state="new">close</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpPageTitle" translate="yes" xml:space="preserve">
+          <source>Aide</source>
+          <target state="new">Help</target>
+        </trans-unit>
+        <trans-unit id="Resx/ScoresPopupText" translate="yes" xml:space="preserve">
+          <source>Vous avez actuellement un score de : #totalPoints points !</source>
+          <target state="new">You actually have : #totalPoints points !</target>
+        </trans-unit>
+        <trans-unit id="Resx/ScoresPopupTitle" translate="yes" xml:space="preserve">
+          <source>Scores</source>
+          <target state="new">Scores</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsMenuContactAuthor" translate="yes" xml:space="preserve">
+          <source>Contacter l'auteur</source>
+          <target state="new">Contact the author</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpTextPage1" translate="yes" xml:space="preserve">
+          <source>Fais défiler tous les films du pack et retrouve leurs titres</source>
+          <target state="new">Scroll through all movies and try to guess their titles</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpTextPage2" translate="yes" xml:space="preserve">
+          <source>Saisis le titre à l'aide du clavier et vérifie ta réponse</source>
+          <target state="new">Enter the title using the keyboard and check your answer</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpTextPage3" translate="yes" xml:space="preserve">
+          <source>N'hésite pas à utiliser l'aide ou à faire participer tes amis</source>
+          <target state="new">Feel free to use the help or make your friends participate</target>
+        </trans-unit>
+        <trans-unit id="Resx/PacksListPageFinishedPacksPart1" translate="yes" xml:space="preserve">
+          <source>Vous avez fini </source>
+          <target state="new">You have finished </target>
+        </trans-unit>
+        <trans-unit id="Resx/PacksListPageFinishedPacksPart2" translate="yes" xml:space="preserve">
+          <source> packs sur </source>
+          <target state="new"> packs of </target>
+        </trans-unit>
+        <trans-unit id="Resx/LevelsPageReinitPack" translate="yes" xml:space="preserve">
+          <source>Rejouer</source>
+          <target state="new">Restart</target>
+        </trans-unit>
+        <trans-unit id="Resx/AdBannerReplacement" translate="yes" xml:space="preserve">
+          <source>/Resources/fr/Images/banner@2x.png</source>
+          <target state="new">/Resources/en/Images/banner@2x.png</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsMenuTvShowQuizzLink" translate="yes" xml:space="preserve">
+          <source>Vous préférez les séries TV ?</source>
+          <target state="new">You prefer TV Show ?</target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPageTVShowQuizzPub" translate="yes" xml:space="preserve">
+          <source>Nouveau : TV Show Quizz !</source>
+          <target state="new">New : TV Show Quizz !</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

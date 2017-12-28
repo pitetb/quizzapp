@@ -1,0 +1,187 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TvShowQuizz.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Locators="clr-namespace:TvShowQuizz.Locators"
+    xmlns:mq="clr-namespace:TvShowQuizz"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"    
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False"    
+    DataContext="{Binding Source={StaticResource Locator}, Path=SettingsViewModel}"
+    >
+    <phone:PhoneApplicationPage.Resources>
+
+
+    </phone:PhoneApplicationPage.Resources>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="False" IsVisible="False" BackgroundColor="{StaticResource PhoneBackgroundColor}">
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <!--LayoutRoot est la grille racine où tout le contenu de la page est placé-->
+    <Grid>
+
+        <Grid x:Name="LayoutRoot" >
+
+
+            <Grid Name="backgroundGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Grid.RowSpan="5" Canvas.ZIndex="0" Name="image1" mq:ImageExtension.MultiResolutionUri="/Resources/Images/backgroundImage.png" Stretch="UniformToFill" />
+
+                <Grid Grid.Row="0" Background="{StaticResource MQLightOrangeColorBrush}" Height="65">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <TextBlock Text="{Binding AppResources.SettingsPageTitle, Converter={StaticResource UpperCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource MQHeaderTitleFontFamily}" FontSize="{StaticResource MQHeaderTitleFontHeight}" Foreground="{StaticResource MQHeaderTitleFontColor}" ></TextBlock>                        
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1" Background="{StaticResource MQDarkOrangeColorBrush}" Height="5" />
+            </Grid>
+
+
+            <Grid Name="main_grid" Margin="0,65,0,0">
+                <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+
+                        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="White" BorderBrush="Gray" BorderThickness="0,0,0,1" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" MouseLeftButtonUp="BorderChangeLanguage_MouseLeftButtonUp" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Margin="15" Source="/Resources/Images/ic_flag@2x.png" Stretch="UniformToFill"/>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding AppResources.SettingsMenuChangeLanguage, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource MQSettingsMenuFontFamily}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="{StaticResource MQSettingsMenuFontHeight}" Foreground="Black" ></TextBlock>
+                            </Grid>
+                        </Border>
+
+
+
+                        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="White" BorderBrush="Gray" BorderThickness="0,0,0,1" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" MouseLeftButtonUp="BorderSoundOnToOff_MouseLeftButtonUp" Visibility="{Binding AppSettings.SoundOnOffSetting, Converter={StaticResource BoolToVisibilityConverter}, Source={StaticResource AppSettingsProvider}}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition ></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Margin="15"  Source="/Resources/Images/ic_sound@2x.png"></Image>
+                                <!--<TextBlock Grid.Column="2" Text="{Binding AppSettings.SoundOnOffSetting, Source={StaticResource AppSettingsProvider}}" Foreground="Black"></TextBlock>-->
+                                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding AppResources.SettingsMenuDesactivateSound, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource MQSettingsMenuFontFamily}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="{StaticResource MQSettingsMenuFontHeight}" Foreground="Black"></TextBlock>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="White" BorderBrush="Gray" BorderThickness="0,0,0,1" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" MouseLeftButtonUp="BorderSoundOffToOn_MouseLeftButtonUp" Visibility="{Binding AppSettings.SoundOnOffSetting, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=Inverse, Source={StaticResource AppSettingsProvider}}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="1" Grid.Column="0" Margin="15"  Source="/Resources/Images/ic_mute@2x.png"></Image>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding AppResources.SettingsMenuActivateSound, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource MQSettingsMenuFontFamily}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="{StaticResource MQSettingsMenuFontHeight}" Foreground="Black"></TextBlock>
+                            </Grid>
+                        </Border>
+
+
+
+                        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="White" BorderBrush="Gray" BorderThickness="0,0,0,1" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" MouseLeftButtonUp="BorderProposePack_MouseLeftButtonUp" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+
+                                <Image Grid.Row="0" Grid.Column="0" Margin="15"  Source="/Resources/Images/ic_suggest_pack@2x.png"></Image>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding AppResources.SettingsMenuProposePack, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource MQSettingsMenuFontFamily}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="{StaticResource MQSettingsMenuFontHeight}" Foreground="Black"></TextBlock>
+                            </Grid>
+                        </Border>
+
+
+
+                        <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Background="White" BorderBrush="Gray" BorderThickness="0,0,0,1" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" MouseLeftButtonUp="BorderQuizzApp_MouseLeftButtonUp" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Margin="15"  Source="/Resources/Images/ic_website@2x.png"></Image>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding AppResources.SettingsMenuQuizzApp, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource MQSettingsMenuFontFamily}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="{StaticResource MQSettingsMenuFontHeight}" Foreground="Black"></TextBlock>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="White" BorderBrush="Gray" BorderThickness="0,0,0,1" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" MouseLeftButtonUp="BorderHelp_MouseLeftButtonUp" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0" Margin="15"  Source="/Resources/Images/ic_how_to@2x.png"></Image>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding AppResources.SettingsMenuHowToPlay, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource MQSettingsMenuFontFamily}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="{StaticResource MQSettingsMenuFontHeight}" Foreground="Black"></TextBlock>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Background="White" BorderBrush="Gray" BorderThickness="0,0,0,1" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" MouseLeftButtonUp="BorderContactAuthor_MouseLeftButtonUp" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0" Margin="15"  Source="/Resources/Images/ic_email2@2x.png"></Image>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding AppResources.SettingsMenuContactAuthor, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource MQSettingsMenuFontFamily}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="{StaticResource MQSettingsMenuFontHeight}" Foreground="Black"></TextBlock>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Background="White" BorderBrush="Gray" BorderThickness="0,0,0,1" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" MouseLeftButtonUp="BorderMovieQuizzLink_MouseLeftButtonUp" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0" Margin="15"  Source="/Resources/Images/ic_exclamation@2x.png"></Image>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding AppResources.SettingsMenuMovieQuizzLink, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontFamily="{StaticResource MQSettingsMenuFontFamily}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="{StaticResource MQSettingsMenuFontHeight}" Foreground="Black"></TextBlock>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Background="White" />
+                        
+                        <Border Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Background="White" >
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,2,0,2" Text="V" FontFamily="{StaticResource MQSettingsMenuFontFamily}" Foreground="Black" FontSize="11"></TextBlock>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,2,2" Text="{Binding VersionAppli, Mode=OneWay}" FontFamily="{StaticResource MQSettingsMenuFontFamily}" Foreground="Black" FontSize="11"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+                    xmlns:local="clr-namespace:QuizzApp.WP.Controls"
+                    >
+    <!-- Label Control definition-->
+    <Style TargetType="local:Label">
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:Label">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" CornerRadius="2">
+                            <ContentControl x:Name="ContentControl" Padding="{TemplateBinding Padding}"
+                                            Foreground="{TemplateBinding Foreground}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" FontWeight="{TemplateBinding FontWeight}" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontStretch="{TemplateBinding FontStretch}" VerticalAlignment="{TemplateBinding VerticalAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" IsTabStop="False" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!-- Push Control definition-->
+    <Style TargetType="local:PushButton">
+        
+        
+        
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:PushButton">
+                    
+                    
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" CornerRadius="2">
+                            <ContentControl x:Name="ContentControl" Padding="{TemplateBinding Padding}"
+                                            Foreground="{TemplateBinding Foreground}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" FontWeight="{TemplateBinding FontWeight}" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontStretch="{TemplateBinding FontStretch}" VerticalAlignment="{TemplateBinding VerticalAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" IsTabStop="False" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

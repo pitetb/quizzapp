@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="TvShowQuizz.ConfirmPopupContentControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    >
+	<Grid VerticalAlignment="Top" >
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<Border BorderThickness="0,0,0,1">
+			<Border.BorderBrush>
+				<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+			</Border.BorderBrush>
+			<StackPanel Orientation="Horizontal" Grid.Row="0">				
+				<TextBlock Name="TitleText" Text="Some Text" />
+			</StackPanel>
+		</Border>
+		<TextBlock Name="MessageText" Text="un titre de film tres tres tres tres long"  Margin="4" Grid.Row="1" TextWrapping="Wrap"></TextBlock>
+	</Grid>
+   
+   	
+
+</UserControl>

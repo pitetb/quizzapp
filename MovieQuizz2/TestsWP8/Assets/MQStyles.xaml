@@ -1,0 +1,11 @@
+﻿<ResourceDictionary 
+    
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<!-- Les entrées du dictionnaire de ressources sont définies ici. -->
+
+    <FontFamily x:Key="CustomFont-Roboto-Black">/TestsWP8;component/Resources/Font/Roboto-Black.ttf#Roboto</FontFamily>
+    
+</ResourceDictionary>

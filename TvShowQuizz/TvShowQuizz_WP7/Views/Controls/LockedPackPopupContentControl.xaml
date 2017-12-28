@@ -1,0 +1,36 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" x:Class="TvShowQuizz.LockedPackPopupContentControl"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    >
+	<Grid VerticalAlignment="Top" >
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<Border BorderThickness="0,0,0,1">
+			<Border.BorderBrush>
+				<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+			</Border.BorderBrush>
+			<StackPanel Orientation="Horizontal" Grid.Row="0">
+				<TextBlock Text="{Binding AppResources.PackLockedViewTitle, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Margin="4,0,0,0" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" />
+			</StackPanel>
+		</Border>
+		
+		<toolkit:WrapPanel Margin="4" Grid.Row="1"  Orientation="Horizontal" >
+            <TextBlock x:Name="packNameTextBlock" Text="{Binding AppResources.PackLockedViewText, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" ></TextBlock>			
+		</toolkit:WrapPanel>
+		
+		        
+            
+	</Grid>
+   
+   	
+
+</UserControl>

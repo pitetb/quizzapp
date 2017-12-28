@@ -1,0 +1,26 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=LayoutTransformer"
+    xmlns:local="clr-namespace:TvShowQuizz"
+    x:Class="TvShowQuizz.SmallPackagePresenterControl"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+	
+	    >
+
+    <Grid x:Name="LayoutRoot"  Background="{Binding Color, Converter={StaticResource ColorToSolidColorBrushConverter}}" DataContext="{Binding Source={StaticResource ControlsLocator}, Path=PackagePresenterViewModel}"        
+          >
+     
+        <!--<Button Content="Test"></Button>-->
+
+            <local:ThreePosterControl Poster1="{Binding Movie1.Poster}" Poster2="{Binding Movie2.Poster}" Poster3="{Binding Movie3.Poster}" HorizontalAlignment="Center" VerticalAlignment="Center"></local:ThreePosterControl>
+            <Image HorizontalAlignment="Center" Visibility="{Binding Path=IsCompleted, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}" Source="/Resources/Images/finish_pack_stripes@2x.png"></Image>
+            <Image HorizontalAlignment="Center" Visibility="{Binding Path=IsLocked, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}" Source="/Resources/Images/lock_pack@2x.png"></Image>
+        
+    </Grid>
+</UserControl>

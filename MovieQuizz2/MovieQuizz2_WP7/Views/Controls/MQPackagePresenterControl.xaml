@@ -1,0 +1,133 @@
+﻿<UserControl xmlns:Controls="clr-namespace:MovieQuizz2.Views.Controls" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=LayoutTransformer"
+    xmlns:qac="clr-namespace:QuizzApp.WP.Controls;assembly=QuizzApp.WP.Controls"
+	xmlns:mq="clr-namespace:MovieQuizz2"
+    xmlns:local="clr-namespace:MovieQuizz2" x:Class="MovieQuizz2.MQPackagePresenterControl"
+    mc:Ignorable="d"    
+    d:DesignHeight="135" d:DesignWidth="500" Foreground="{StaticResource MQWhiteForegroundBrush}" FontFamily="{StaticResource CustomFont-RobotoCondensed-Regular}" 
+   
+    >
+    <UserControl.BorderBrush>
+        <StaticResource ResourceKey="MQGreyBrush"/>
+    </UserControl.BorderBrush>
+    <UserControl.Background>
+        <StaticResource ResourceKey="MQWhiteForegroundBrush"/>
+    </UserControl.Background>
+    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ControlsLocator}, Path=PackagePresenterViewModel}" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave" MouseLeftButtonUp="Grid_MouseLeftButtonUp">
+
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroupMouse">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="Pressed">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderThickness)" Storyboard.TargetName="border">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,0,0,1</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="border">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,4,0,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+
+        <Border x:Name="border" CornerRadius="5" BorderThickness="0,0,0,5"  BorderBrush="{Binding Color, Converter={StaticResource ColorDarkerConverter}}" Background="{Binding Color, Converter={StaticResource ColorToSolidColorBrushConverter}}" >
+            <Grid Margin="5" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MinHeight="100"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" Grid.Column="0" >
+
+                        <local:ThreePosterControl x:Name="ThreePosterControl" Poster1="{Binding Movie1.Poster}" Poster2="{Binding Movie2.Poster}" Poster3="{Binding Movie3.Poster}" ></local:ThreePosterControl>
+                        
+
+                        <qac:Label VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       Content="{Binding AppResources.PackagePresenterControlPackTerminated, Converter={StaticResource UpperCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+                                       Visibility="{Binding Path=IsCompleted, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"
+                                        FontSize="24"
+                                        Background="Red"
+                                        Padding="3"                                        
+                                        />
+                        <!--<Image HorizontalAlignment="Center" Visibility="{Binding Path=IsCompleted, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}" Source="/Resources/Images/finish_pack_stripes@2x.png"></Image>-->
+                    </Grid>
+
+                    <Grid Grid.Row="0" Grid.Column="1" Name="PackageDetailsGrid" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="29*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="{Binding Title, Converter={StaticResource UpperCaseConverter}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"  />
+                        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
+                            <!--<TextBlock Text="{Binding Points}" FontSize="30"  />
+                            <TextBlock Text="/"   FontSize="30"/>-->
+                            <TextBlock Text="{Binding TotalPoints}"  FontSize="18" >
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="White" Opacity="0.9"/>
+                                </TextBlock.Foreground>
+                            </TextBlock>
+                            <TextBlock Text=" Points"   FontSize="18" >
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="White" Opacity="0.9"/>
+                                </TextBlock.Foreground>
+                            </TextBlock>
+                        </StackPanel>
+
+                        <ItemsControl Grid.Row="2"  Margin="20,0,20,0" ItemsSource="{Binding MediasResolved}" >
+                            <!--<mq:MQLevelButton Label="1"  />-->
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <qac:UniformGrid Rows="1" Margin="0"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Ellipse Fill="#FF3E3636" HorizontalAlignment="Center" Height="15" Margin="2" Stroke="Black" VerticalAlignment="Center" Width="15" StrokeThickness="0" Visibility="{Binding Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}">
+                                            <Ellipse.RenderTransform>
+                                                <TranslateTransform X="0.70" Y="0.4"></TranslateTransform>
+                                            </Ellipse.RenderTransform>
+                                        </Ellipse>
+                                        <Ellipse Fill="#FFD700" HorizontalAlignment="Center" Height="15" Margin="2" Stroke="Black" VerticalAlignment="Center" Width="15" StrokeThickness="0" Visibility="{Binding Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}" />
+
+
+                                        <Ellipse Fill="#FF3E3636" HorizontalAlignment="Center" Height="15" Margin="2" Stroke="Black" VerticalAlignment="Center" Width="15" StrokeThickness="0" Visibility="{Binding ConverterParameter=Inverse, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}">
+                                            <Ellipse.RenderTransform>
+                                                <TranslateTransform X="-0.70" Y="-0.4"></TranslateTransform>
+                                            </Ellipse.RenderTransform>
+                                        </Ellipse>
+                                        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="15" Margin="2" Stroke="Black" VerticalAlignment="Center" Width="15" StrokeThickness="0" Visibility="{Binding ConverterParameter=Inverse, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"/>
+
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                    </Grid>
+
+                </Grid>
+
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
